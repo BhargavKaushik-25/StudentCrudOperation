@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>UPDATE STUDENT INFORMATION</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+<div align="center" style="border:1px">
+    <h1 class="fw-lighter">STUDENT INFORMATION</h1>
+    <!--  th:text="${studentRollNumber}" act as a getter-->
+    <!--  th:field="*{studentRollNumber}" act as a setter-->
+    <!--  th:action="@{/saveStudent} will act as action which will transfer the data in object format-->
+    <form method="post" th:action="@{/saveUpdatedStudent}"  th:object="${matchingObject}" ><!-- here we are fetching the data of object -->
+        <label for="rollNumber">Enter Your Roll Number</label><br>
+        <input type="text" id="rollNumber" placeholder="ENTER YOUR ROLL NUMBER" th:field="*{studentRollNumber}" readonly="readonly">
+        <br><br>
+        <label for="name">Enter Your Name</label>
+        <br>
+        <input type="text" id="name" placeholder="ENTER YOUR NAME" th:field="*{studentName}">
+        <br><br>
+        <label for="contactNumber">Enter Your Contact Number</label>
+        <br>
+        <input type="text" id="contactNumber" placeholder="ENTER YOUR CONTACT NUMBER" th:field="*{studentContactNumber}">
+        <br><br>
+        <label for="address">Enter Your Address</label>
+        <br>
+        <input type="text" id="address" placeholder="ENTER YOUR ADDRESS" th:field="*{studentAddress}">
+        <br><br>
+        <label for="totalMarks">Enter Total Marks</label>
+        <br>
+        <input type="text" id="totalMarks" placeholder="ENTER TOTAL MARKS" th:field="*{studentTotalMarks}">
+        <br><br>
+        <label for="obtainedMarks">Enter Obtained Marks</label>
+        <br>
+        <input type="text" id="obtainedMarks" placeholder="ENTER OBTAINED MARKS" th:field="*{studentObtainedMarks}">
+        <br><br>
+        <button class="btn btn-outline-success">UPDATE STUDENT</button>
+    </form>
+</div>
+</body>
+</html>
